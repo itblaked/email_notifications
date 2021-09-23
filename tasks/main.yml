@@ -1,2 +1,24 @@
 ---
 # tasks file for email_notifications
+
+- name: Assert that mandatory inputs are provided
+  assert:
+    that:
+      - mail_subject is defined
+    success_msg: Mandatory inputs have been provided.
+    fail_msg: Mandatory inputs have NOT been provided.
+
+- name: Send email 
+  community.general.mail:
+    host: "{{ mail_host | default(none) or omit }}"
+    password: "{{ mail_password | default(none) or omit }}"
+    username: "{{ mail_username | default(none) or omit }}"
+    attach: "{{ mail_attach | default(none) or omit }}"
+    body: "{{ mail_body | default(none) or omit }}"
+    cc: "{{ mail_cc | default(none) or omit }}"
+    port: "{{ mail_port | default(none) or omit }}"
+    secure: "{{ mail_secure | default(none) or omit }}"
+    sender: "{{ mail_sender | default(none) or omit }}"
+    subject: "{{ mail_subject }}"
+    subtype: "{{ mail_subtype | default(none) or omit }}"
+    to: "{{ mail_to | default(none) or omit }}"

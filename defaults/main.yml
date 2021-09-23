@@ -1,2 +1,18 @@
 ---
 # defaults file for email_notifications
+
+# These variables map directly to the parameters of the mail module, details on their purpose can be read on the module page:
+# https://docs.ansible.com/ansible/latest/collections/community/general/mail_module.html
+
+# mail_host:
+# mail_password:
+# mail_username:
+# mail_attach:
+# mail_body:
+# mail_cc:
+# mail_port:
+# mail_secure:
+# mail_sender:
+# mail_subject:
+# mail_subtype:
+# mail_to:
