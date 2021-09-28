@@ -5,6 +5,7 @@ This email has been sent by the Ansible Automation Platform in relation to insta
 <br>
 <br>
 <br>
+{% if pre_patch_install_report is defined %}
 <h1> Status Before Patching </h1>
 <br>
 Below is a list of the systems and their update status before updates have been installed:
@@ -35,10 +36,14 @@ Below is a list of the systems and their update status before updates have been 
   </tr>
   {% endfor %}
 </table>
+{% else %}
+Pre Patch report data is not available
+{% endif %}
 <br>
 <br>
 <br>
 <h1> Status After Patching </h1>
+{% if post_patch_install_report is defined %}
 <br>
 Below is a list of the systems and their updates status after updates have been installed
 <br>
@@ -68,6 +73,9 @@ Below is a list of the systems and their updates status after updates have been 
   </tr>
   {% endfor %}
 </table>
+{% else %}
+Post Patch report data is not available
+  {% endif %}
 <br>
 <br>
 <br>

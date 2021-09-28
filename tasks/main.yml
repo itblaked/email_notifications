@@ -8,6 +8,9 @@
     success_msg: Mandatory inputs have been provided.
     fail_msg: Mandatory inputs have NOT been provided.
 
+- debug:
+    var: pre_patch_install_report
+
 - name: Send email 
   community.general.mail:
     host: "{{ mail_host | default(none) or omit }}"
