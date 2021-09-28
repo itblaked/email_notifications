@@ -8,7 +8,8 @@
 # mail_password:
 # mail_username:
 # mail_attach:
-# mail_body:
+# A jinja2 html body template is included for Linux patching.
+# mail_body: "{{ lookup('template', 'linux_patching_mail_body.jinja2') }}"
 # mail_cc:
 # mail_port:
 # mail_secure:
